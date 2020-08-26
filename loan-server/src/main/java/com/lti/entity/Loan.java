@@ -17,7 +17,7 @@ public class Loan {
 	private int loanId;
 	
 	@OneToOne
-	@JoinColumn(name ="customerId")
+	@JoinColumn(name ="customerid")
 	private Customer customer;
 	@Column(name="amounteligible")
 	private double amountEligible;

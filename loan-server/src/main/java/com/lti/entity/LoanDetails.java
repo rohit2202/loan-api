@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name ="loandetails")
-@NamedQuery(name ="is-loan-present", query =("select count(l.loan) from LoanDetails l where l.loan= :loanId"))
+//@NamedQuery(name ="is-loan-present", query =("select count(l.loan) from LoanDetails l where l.loan= :loanId"))
 public class LoanDetails {
 	
 	@Id
