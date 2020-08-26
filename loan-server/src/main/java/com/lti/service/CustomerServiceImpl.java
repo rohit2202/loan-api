@@ -18,7 +18,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer register(Customer customer) {
-		if (!customerRepo.isCustomerPresent(customer.getEmailid())) {
+		if (!customerRepo.isCustomerPresent(customer.getEmail())) {
 			customerRepo.save(customer);
 		} else {
 			throw new CustomerServiceException("Customer Already Registered!");

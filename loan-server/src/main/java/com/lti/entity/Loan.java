@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,8 +16,8 @@ public class Loan {
 	@Column(name="loanid")
 	private int loanId;
 	
-	@ManyToOne
-	@JoinColumn(name ="customerid")
+	@OneToOne
+	@JoinColumn(name ="customerId")
 	private Customer customer;
 	@Column(name="amounteligible")
 	private double amountEligible;

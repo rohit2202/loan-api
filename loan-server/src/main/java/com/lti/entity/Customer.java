@@ -6,101 +6,135 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+//import com.lti.dto.CustomerDto.GENDER;
+
 @Entity
-@Table(name= "customer")
+@Table(name= "Customer")
+@NamedQuery(name = "fetch-all", query = "select c from Customer c")
+@NamedQuery(name = "fetch-login", query = ("select c.customerId from Customer c where c.email = :email and c.password = :password"))
 public class Customer {
 
 	@Id
-	@Column(name ="customerid")
+	@GeneratedValue
+	@Column(name="customerid")
 	private long customerId;
-	@Override
-	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", password=" + password + "]";
-	}
+	
 	@Column(name="customername")
 	private String customerName;
+	
+	@Column(name="dateofbirth")
+	private LocalDate dateOfBirth;
+	
+	@Column(name="emailid")
+	private String email;
+	
 	@Column(name="password")
 	private String password;
-	public long getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(long customerId) {
-		this.customerId = customerId;
-	}
-	public String getCustomerName() {
-		return customerName;
-	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	@Column(name= "dateofbirth")
-	private LocalDate dateofbirth;
-	@Column(name ="phoneno")
-	private double phoneno;
-	@Column(name ="emailid")
-	private String emailid;
-	@Column(name ="gender")
+	
+	@Column(name="phoneno")
+	private String phone;
+	
+	@Column(name="gender")
 	@Enumerated(EnumType.STRING)
 	private GENDER gender;
-	public LocalDate getDateofbirth() {
-		return dateofbirth;
-	}
-	public void setDateofbirth(LocalDate dateofbirth) {
-		this.dateofbirth = dateofbirth;
-	}
-	public double getPhoneno() {
-		return phoneno;
-	}
-	public void setPhoneno(double phoneno) {
-		this.phoneno = phoneno;
-	}
-	public String getEmailid() {
-		return emailid;
-	}
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
-	}
-	public GENDER getGender() {
-		return gender;
-	}
-	public void setGender(GENDER gender) {
-		this.gender = gender;
-	}
-	public String getNationality() {
-		return nationality;
-	}
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
-	public String getAadhaarno() {
-		return aadhaarno;
-	}
-	public void setAadhaarno(String aadhaarno) {
-		this.aadhaarno = aadhaarno;
-	}
-	public String getPanno() {
-		return panno;
-	}
-	public void setPanno(String panno) {
-		this.panno = panno;
-	}
+	
+	@Column(name="nationality")
+	private String nationality;
+	
+	@Column(name="aadharno")
+	private String aadharNo;
+	
+	@Column(name="panno")
+	private String panNo;
+	
 	public static enum GENDER{
 		MALE,FEMALE;
 	}
 
-	@Column(name ="nationality")
-	private String nationality;
-	@Column(name ="aadharno")
-	private String aadhaarno;
-	@Column(name ="panno")
-	private  String panno;
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public GENDER getGender() {
+		return gender;
+	}
+
+	public void setGender(GENDER gender) {
+		this.gender = gender;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public String getAadharNo() {
+		return aadharNo;
+	}
+
+	public void setAadharNo(String aadharNo) {
+		this.aadharNo = aadharNo;
+	}
+
+	public String getPanNo() {
+		return panNo;
+	}
+
+	public void setPanNo(String panNo) {
+		this.panNo = panNo;
+	}
+
+	public long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
+	}
+	
+	
 }

@@ -27,14 +27,14 @@ class  LoanServerApplicationTests {
 	void add() {
 		Customer c = new Customer();
 		
-		c.setCustomerName("Rohit Roy");
-		c.setEmailid("roy@example.com");
-		c.setPassword("roy");
-		c.setDateofbirth(LocalDate.of(1999,02, 07));
-		c.setPhoneno(991101652);
+		c.setCustomerName("Jumbo");
+		c.setEmail("jumbo@lti.com");
+		c.setPassword("jumbo");
+		c.setDateOfBirth(LocalDate.of(1999,02, 07));
+		c.setPhone("991101652");
 		c.setNationality("Indian");
-		c.setAadhaarno("985623560974");
-		c.setPanno("XCR63");
+		c.setAadharNo("985623560974");
+		c.setPanNo("XCR63");
 		c.setGender(GENDER.MALE);
 		
 
@@ -47,7 +47,7 @@ class  LoanServerApplicationTests {
 		List<Customer> listOfCustomers = customerRepo.findAll();
 
 		for (Customer c : listOfCustomers) {
-			System.out.println(c.getCustomerId() + " , " + c.getCustomerName() + " , " + c.getDateofbirth() + " , " + c.getEmailid());
+			System.out.println(c.getCustomerId() + " , " + c.getCustomerName() + " , " + c.getDateOfBirth() + " , " + c.getEmail());
 			;
 		}
 		// assert missing
@@ -56,7 +56,7 @@ class  LoanServerApplicationTests {
 @Test
 	void findByUsernamePassword() {
 
-		long id = customerRepo.findByUsernamePassword("roy@example.com", "roy");
+		long id = customerRepo.findByUsernamePassword("jumbo@lti", "jumbo");
 		System.out.println("Customer id is"+id);
 		// assert missing
 	}

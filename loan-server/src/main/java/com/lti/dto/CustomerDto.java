@@ -20,10 +20,6 @@ public class CustomerDto {
 	private String phone;
 	private GENDER gender;
 	
-	public static enum GENDER{
-		MALE,FEMALE;
-	}
-
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -95,10 +91,9 @@ public class CustomerDto {
 	public void setGender(GENDER gender) {
 		this.gender = gender;
 	}
-	
-	
 
-	
-	
-	
+	public static enum GENDER{
+		MALE,FEMALE;
 	}
+
+}
