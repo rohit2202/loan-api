@@ -16,15 +16,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "customer")
 @NamedQuery(name = "fetch-all", query = "select c from Customer c")
-@NamedQuery(name = "fetch-login", query = ("select c.customerId from Customer c where c.email = :email and c.password = :password"))
+//@NamedQuery(name = "fetch-login", query = ("select c.customerId from Customer c where c.email = :email and c.password = :password"))
 public class Customer {
-
-	@Override
-	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", dateOfBirth=" + dateOfBirth
-				+ ", email=" + email + ", password=" + password + ", phone=" + phone + ", gender=" + gender
-				+ ", nationality=" + nationality + ", aadharNo=" + aadharNo + ", panNo=" + panNo + "]";
-	}
 
 	@Id
 	@GeneratedValue
@@ -37,12 +30,22 @@ public class Customer {
 	@Column(name="dateofbirth")
 	private LocalDate dateOfBirth;
 	
-	@Column(name="emailid")
-	private String email;
+	
 	
 	@Column(name="password")
 	private String password;
 	
+	@Column(name ="email")
+	private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Column(name="phoneno")
 	private String phone;
 	
@@ -77,14 +80,6 @@ public class Customer {
 
 	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getPassword() {

@@ -31,18 +31,21 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		return entityManager.createNamedQuery("fetch-all").getResultList();
 	}
 
-	@Override      
+	@Override
 	public boolean isCustomerPresent(String email) {
-		return ((Long)entityManager.createQuery("select count(c.email) from Customer c where c.email = :em")
-				.setParameter("em", email)
-				.getSingleResult()).intValue() == 1 ? true:false;
+		return ((Long) entityManager.createQuery("select count(c.email) from Customer c where c.email = :em")
+				.setParameter("em", email).getSingleResult()).intValue() == 1 ? true : false;
 		// assert missing
 	}
 
 	@Override
 	public Long findByUsernamePassword(String email, String password) {
-		System.out.println(email+ password);
-		return (Long) entityManager.createNamedQuery("fetch-login").setParameter("email", email)
-				.setParameter("password", password).getSingleResult();
+
+		// System.out.println(email+ password);
+		return (Long) entityManager
+				.createQuery(
+						"select c.customerId from Customer c where (c.email) = :email and (c.password) = :password")
+				.setParameter("email", email).setParameter("password", password).getSingleResult();
+
 	}
 }
