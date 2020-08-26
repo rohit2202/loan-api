@@ -28,6 +28,13 @@ public class CustomerDto {
 		this.customerName = customerName;
 	}
 
+	@Override
+	public String toString() {
+		return "CustomerDto [customerName=" + customerName + ", dateOfBirth=" + dateOfBirth + ", email=" + email
+				+ ", password=" + password + ", nationality=" + nationality + ", aadharNo=" + aadharNo + ", panNo="
+				+ panNo + ", phone=" + phone + ", gender=" + gender + "]";
+	}
+
 	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}

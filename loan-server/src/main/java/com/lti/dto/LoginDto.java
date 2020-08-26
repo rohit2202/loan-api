@@ -20,6 +20,10 @@ public class LoginDto {
 		this.email = email;
 		this.password = password;
 	}
+	@Override
+	public String toString() {
+		return "LoginDto [email=" + email + ", password=" + password + "]";
+	}
 	
 
 }

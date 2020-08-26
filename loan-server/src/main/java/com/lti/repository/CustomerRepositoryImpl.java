@@ -41,6 +41,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 	@Override
 	public Long findByUsernamePassword(String email, String password) {
+		System.out.println(email+ password);
 		return (Long) entityManager.createNamedQuery("fetch-login").setParameter("email", email)
 				.setParameter("password", password).getSingleResult();
 	}

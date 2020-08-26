@@ -14,10 +14,17 @@ import javax.persistence.Table;
 //import com.lti.dto.CustomerDto.GENDER;
 
 @Entity
-@Table(name= "Customer")
+@Table(name= "customer")
 @NamedQuery(name = "fetch-all", query = "select c from Customer c")
 @NamedQuery(name = "fetch-login", query = ("select c.customerId from Customer c where c.email = :email and c.password = :password"))
 public class Customer {
+
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", dateOfBirth=" + dateOfBirth
+				+ ", email=" + email + ", password=" + password + ", phone=" + phone + ", gender=" + gender
+				+ ", nationality=" + nationality + ", aadharNo=" + aadharNo + ", panNo=" + panNo + "]";
+	}
 
 	@Id
 	@GeneratedValue

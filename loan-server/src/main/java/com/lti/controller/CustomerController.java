@@ -63,6 +63,8 @@ public class CustomerController {
 
 		try {
 			Customer customer = customeService.login(loginDto.getEmail(), loginDto.getPassword());
+			System.out.println(loginDto);
+			//System.out.println();
 			LoginStatus status = new LoginStatus();
 			status.setMessage("Login successfull!");
 			status.setStatus(Status.StatusType.SUCCESS);

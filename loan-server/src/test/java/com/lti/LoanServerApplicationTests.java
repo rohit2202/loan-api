@@ -27,13 +27,13 @@ class  LoanServerApplicationTests {
 	void add() {
 		Customer c = new Customer();
 		
-		c.setCustomerName("Jumbo");
-		c.setEmail("jumbo@lti.com");
-		c.setPassword("jumbo");
+		c.setCustomerName("Himanshu	");
+		c.setEmail("himanshu@lti.com");
+		c.setPassword("himanshu");
 		c.setDateOfBirth(LocalDate.of(1999,02, 07));
-		c.setPhone("991101652");
+		c.setPhone("9911652");
 		c.setNationality("Indian");
-		c.setAadharNo("985623560974");
+		c.setAadharNo("9856260974");
 		c.setPanNo("XCR63");
 		c.setGender(GENDER.MALE);
 		
@@ -56,7 +56,7 @@ class  LoanServerApplicationTests {
 @Test
 	void findByUsernamePassword() {
 
-		long id = customerRepo.findByUsernamePassword("jumbo@lti", "jumbo");
+		long id = customerRepo.findByUsernamePassword("himanshu@lti", "himanshu");
 		System.out.println("Customer id is"+id);
 		// assert missing
 	}
