@@ -56,7 +56,7 @@ class  LoanServerApplicationTests {
 @Test
 	void findByUsernamePassword() {
 
-		long id = customerRepo.findByUsernamePassword("himanshu@lti", "himanshu");
+		long id = customerRepo.findByUsernamePassword("himanshu@lti.com", "himanshu");
 		System.out.println("Customer id is"+id);
 		// assert missing
 	}
