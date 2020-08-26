@@ -32,6 +32,9 @@ public class IncomeController {
 			incomeDetails.setOrganizationName(incomeDto.getOrganizationName());
 			incomeDetails.setOrganizationType(incomeDto.getOrganizationType());
 			incomeDetails.setTypeOfEmployment(incomeDto.getTypeOfEmployment());
+			incomeDetails.setAmountNeeded(incomeDto.getAmountNeeded());
+			incomeDetails.setTenure(incomeDto.getTenure());
+			incomeDetails.setWorkingYears(incomeDto.getWorkingYears());
 			
 			incomeDetails.setCustomer((Customer)incomeServ.getCustomerDetails(incomeDto.getCustomerId()));
 			incomeServ.addIncomeDetails(incomeDetails);

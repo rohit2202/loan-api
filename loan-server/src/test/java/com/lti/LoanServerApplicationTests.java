@@ -27,8 +27,8 @@ class  LoanServerApplicationTests {
 	void add() {
 		Customer c = new Customer();
 		
-		c.setCustomerName("John");
-		c.setEmail("john@lti.com");
+		c.setCustomerName("Varun");
+		c.setEmail("varun@lti.com");
 		c.setPassword("john");
 		c.setDateOfBirth(LocalDate.of(1999,02, 07));
 		c.setPhone("9911652");

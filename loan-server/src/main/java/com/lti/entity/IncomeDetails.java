@@ -39,6 +39,40 @@ public class IncomeDetails {
 	private String organizationName;
 	@Column(name="employername")
 	private String employerName;
+	
+	@Column(name = "amountneeded")
+	private double amountNeeded;
+	
+	@Column(name ="tenure")
+	private int tenure;
+	@Column(name ="workingyears")
+	private int workingYears;
+	
+	
+
+	public double getAmountNeeded() {
+		return amountNeeded;
+	}
+
+	public void setAmountNeeded(double amountNeeded) {
+		this.amountNeeded = amountNeeded;
+	}
+
+	public int getTenure() {
+		return tenure;
+	}
+
+	public void setTenure(int tenure) {
+		this.tenure = tenure;
+	}
+
+	public int getWorkingYears() {
+		return workingYears;
+	}
+
+	public void setWorkingYears(int workingYears) {
+		this.workingYears = workingYears;
+	}
 
 	public int getDetailsId() {
 		return detailsId;

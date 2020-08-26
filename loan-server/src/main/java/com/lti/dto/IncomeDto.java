@@ -14,7 +14,29 @@ public class IncomeDto {
 	private String organizationType;
 	private String organizationName;
 	private String employerName;
+	private double amountNeeded;
+	private int tenure;
+	private int workingYears;
 	
+	
+	public double getAmountNeeded() {
+		return amountNeeded;
+	}
+	public void setAmountNeeded(double amountNeeded) {
+		this.amountNeeded = amountNeeded;
+	}
+	public int getTenure() {
+		return tenure;
+	}
+	public void setTenure(int tenure) {
+		this.tenure = tenure;
+	}
+	public int getWorkingYears() {
+		return workingYears;
+	}
+	public void setWorkingYears(int workingYears) {
+		this.workingYears = workingYears;
+	}
 	public double getIncome() {
 		return income;
 	}
